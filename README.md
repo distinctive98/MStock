@@ -85,7 +85,7 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
 
   - 12개 종목
 
-  ![](\img\main.PNG)
+  ![](./img/main.PNG)
 
 
 
@@ -98,7 +98,7 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
   - 종목별 채팅
   - 매수
 
-  ![](\img\stock.PNG)
+  ![](./img/stock.PNG)
 
   
 
@@ -108,6 +108,6 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
   - 보유 주식 정보
   - 매도
 
-  ![](/img/property.png)
+  ![](./img/property.png)
 
   

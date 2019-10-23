@@ -106,7 +106,7 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
 
   - 자산 정보, 자산 비율, 등급
   - 보유 주식 정보
-  - 매도
+  - 매도 
 
   ![](./img/property.png)
 

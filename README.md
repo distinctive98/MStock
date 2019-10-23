@@ -1,4 +1,5 @@
 # MStock
+
 ## About the Project
 
 - 데이터 분석과 함께하는 모의주식 플랫폼
@@ -43,90 +44,70 @@
 
 ### Prerequisites
 
+- configure.properties
 
+```
+#Database Info
+username=temp
+password=temp
+dburl= jdbc:oracle:thin:@localhost:1521:XE
 
-## Flow Chart
+#Naver API Info
+naver.client_id={네이버 클라이언트 아이디}
+naver.client_secret={네이버 클라이언트 시크릿}
+naver.callback_url={네이버 콜백 URL}
 
+#R path
+rsource.newsUpload='newsupload.R', encoding = 'UTF-8'
+rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
+```
 
+### Installation
+
+	1. Project [Clone]
+ 	2. Eclipse [Import] - [Project from Folder or Archive]
+ 	3. Select [Project Folder]
+ 	4. [Wait] for Completion and Installation
+ 	5. [Project Properties] - [Project Facet] - [Java 1.8]
+
+### Usage
+
+1. Rserve를 실행하세요
+2. 데이터 분석 결과는 Rserve 실행 10분 뒤부터 생성됩니다
+3. 주식 정보 파싱은 월-금, 09:00-16:00에만 실행됩니다
+4. 랭킹은 월-금 16시에 갱신됩니다
 
 
 
 ## Screen Configuration
 
-- Section 1 - Main
+- Section 1 - 메인
 
-  - 현재 12개 종목 서비스 중
+  - 12개 종목
 
-    ![](\img\main1.PNG)
+  ![](\img\main.PNG)
+
+
 
 - Section 2 - 종목
 
-  - Chart 
-
-    - 주가 정보 JSON 파일과 Chart.js를 이용해서 구현
-    - 임시 이미지입니다
-
-    ![](\img\temp.PNG)
-
-  - 주가 정보
-
-    - Spring Scheduler를 통해 10초마다 갱신
-
-    ![](\img\stock1.PNG)
-
-  - 데이터 분석
-
-    - 10분 주기로 R을 이용한 종목별 뉴스 분석 
-
-    - 분석 결과 기반의 워드클라우드 생성
-
-    - 감정사전 & TF-IDF & 나이브-베이즈 분류기를 통한 감정분석
-
-      ![](/img/stock4.png)
-
-    - 10분 뒤의 현재가를 예측하는 회귀분석 및 정확도
-
-    - 독립변수 : 거래량, 시간
-
-    - 종속변수 : 현재가
-
-    - 정확도 : 수정된 결정계수 이용
-
-    - 신뢰도로 회귀분석을 평가하기에는 pValue 값이 극단적으로 작아서 정확도를 사용
-
-    ![](img/stock3.png)
-
-  - 증시기사
-
-    - 네이버 금융에서 제공하는 증시기사 스크래핑
-
-    ![](img/stock5.png)
-
-  - 채팅
-
-    - 종목별 채팅방
-    - 웹 소켓
-
-    ![](/img/stock6.png)
-
-    
-
+  - 차트, 주가 정보
+  - 10분 뒤 현재가 예측(회귀분석)
+  - 뉴스 기반 워드클라우드, TF-IDF 기반 감정분석
+  - 네이버 증시기사
+  - 종목별 채팅
   - 매수
 
-    ![](/img/stock7.png)
-
-- Section 3 - 자산 관리
-
-  - 자산 정보
-
-    - 총 자산, 총 손익
-    - 보유 주식에 대한 매입 금액, 평가 금액, 평가 손익
-    - 보유한 크레딧과 주식의 비율
-    - 등급 확인
-
-    ![](/img/property1.png)
+  ![](\img\stock.PNG)
 
   
 
-  - 보유한 주식 정보
-    - 
+- Section 3 - 자산 관리
+
+  - 자산 정보, 자산 비율, 등급
+  - 보유 주식 정보
+  - 매도
+
+  ![](/img/property.png)
+
+  

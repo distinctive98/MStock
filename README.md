@@ -100,7 +100,9 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
 
   ![](./img/stock.PNG)
 
-  
+  ![](./img/analysis.PNG)
+
+
 
 - Section 3 - 자산 관리
 
@@ -110,4 +112,19 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
 
   ![](./img/property.png)
 
-  
+
+
+
+- Section 4 - 기타 기능
+
+  - 게시판, 댓글
+  - 히스토리, 마이페이지
+  - 랭킹, 파산신청
+
+  ![](./img/board.png)
+
+
+
+
+
+## End

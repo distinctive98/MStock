@@ -110,7 +110,7 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
   - 보유 주식 정보
   - 매도 
 
-  ![](./img/property.png)
+  ![](./img/property.PNG)
 
 
 
@@ -121,7 +121,7 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
   - 히스토리, 마이페이지
   - 랭킹, 파산신청
 
-  ![](./img/board.png)
+  ![](./img/board.PNG)
 
 
 

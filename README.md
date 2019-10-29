@@ -83,7 +83,7 @@ rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
 
 - Section 1 - 메인
 
-  - 12개 종목
+  - 12개 종목 운영
 
   ![](./img/main.PNG)
 

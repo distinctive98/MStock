@@ -1,130 +1,114 @@
-# MStock
+<h1><img src="./photo/mstock_logo.svg"></h1>
+ <img src="https://img.shields.io/badge/SpringMVC-5.0.2.RELEASE-brightgreen.svg"><img src="https://img.shields.io/badge/Contributors-4-yellow.svg">
 
-## About the Project
+## What is this?
 
-- 데이터 분석과 함께하는 모의주식 플랫폼
+> Stock-Learing Platform For Stock Beginners
 
+### Function
 
-
-## Features
-
-- 실시간 주식 정보 파싱을 통한 실제 주식 환경 제공
-- 종목간 매수/매도 및 자산관리 환경 제공
-- 종목간 기사 스크래핑을 통한 워드클라우드, 감정분석 제공
-- 10분 뒤의 현재가를 예측하는 회귀분석 제공
-
-
-
-## Getting Started
-
-### Architecture
-
-- Client
-  - HTML5, CSS3, JavaScript, jQuery, Ajax
-  - Bootstrap4
-  - Chart.js
-- Server
-  - Spring STS 3.9.9
-  - Tomcat 9.0
-  - MyBatis
-  - JSP
-  - R, Rserve
-  - JSON
-  - AWS
-- Database
-  - Oracle Database 11g
-- Open API & XML
-  - Naver Open API(Login)
-  - 한국거래소 XML 서비스
-- Development Flatform
-  - Eclipse
-  - Java(jdk1.8.0_211)
-  - R Studio
-  - Git
-
-### Prerequisites
-
-- configure.properties
-
-```
-#Database Info
-username=temp
-password=temp
-dburl= jdbc:oracle:thin:@localhost:1521:XE
-
-#Naver API Info
-naver.client_id={네이버 클라이언트 아이디}
-naver.client_secret={네이버 클라이언트 시크릿}
-naver.callback_url={네이버 콜백 URL}
-
-#R path
-rsource.newsUpload='newsupload.R', encoding = 'UTF-8'
-rsource.allAnalysis='All_Analysis.R', encoding = 'UTF-8'
-```
-
-### Installation
-
-	1. Project [Clone]
- 	2. Eclipse [Import] - [Project from Folder or Archive]
- 	3. Select [Project Folder]
- 	4. [Wait] for Completion and Installation
- 	5. [Project Properties] - [Project Facet] - [Java 1.8]
-
-### Usage
-
-1. Rserve를 실행하세요
-2. 데이터 분석 결과는 Rserve 실행 10분 뒤부터 생성됩니다
-3. 주식 정보 파싱은 월-금, 09:00-16:00에만 실행됩니다
-4. 랭킹은 월-금 16시에 갱신됩니다
+- Parsing real-time stock information and Show stock chart
+- Purchase/Sell stock and Show history
+- Real-time analytics with news and stock data
+  - Sentiment Analysis, Regression Analysis, and WordCloud Using R
+- Communication Functions (board, chatting)
+- Ranking
 
 
 
-## Screen Configuration
+## Stack
 
-- Section 1 - 메인
+> Front-end
 
-  - 12개 종목 운영
+- HTML5 / CSS3 / JavaScript / jQuery / Ajax
+- Bootstrap
+- Chart.js
+- WebSocket
 
-  ![](./img/main.PNG)
+> Back-end
 
-
-
-- Section 2 - 종목
-
-  - 차트, 주가 정보
-  - 10분 뒤 현재가 예측(회귀분석)
-  - 뉴스 기반 워드클라우드, TF-IDF 기반 감정분석
-  - 네이버 증시기사
-  - 종목별 채팅
-  - 매수
-
-  ![](./img/stock.PNG)
-
-  ![](./img/analysis.PNG)
+- Spring STS 3.9.9
+- Tomcat v9.0 
+- JAVA (jdk1.8.0_211)
+- Mybatis
+- R-3.6.1, Rserve
+- JSP
+- Oracle Database Express Edition 11g Release 2
 
 
 
-- Section 3 - 자산 관리
+## Installation
 
-  - 자산 정보, 자산 비율, 등급
-  - 보유 주식 정보
-  - 매도 
-
-  ![](./img/property.PNG)
+1. https://github.com/kyun9/MStock.git  - [Clone or download] - ["Click"]
+2. Import from Eclipse
 
 
 
+## Usage
 
-- Section 4 - 기타 기능
+1. Oracle database CREATE USER and GRANT
 
-  - 게시판, 댓글
-  - 히스토리, 마이페이지
-  - 랭킹, 파산신청
+   ```sql
+   CREATE USER {userid} IDENTIFIED BY {password};
+   GRANT CONNECT, RESOURCE TO {userid};
+   ```
 
-  ![](./img/board.PNG)
+2. Import 'mstock.dmp'
+
+   ```bash
+   $ imp userid={userid}/{password}@SID file='mstock.dmp' 
+   ```
+
+3. Add configure.properties
+
+   ```properties
+   #Add  '/src/main/resources/config/configure.properties'
+   
+   #Database Information
+   username={userid}
+   password={password}
+   dburl= jdbc:oracle:thin:@{URL}:1521:XE
+   
+   #Naver login API Information
+   naver.client_id={Naver_Client_Id}
+   naver.client_secret={Naver_Client_Secret}
+   naver.callback_url={Naver_Callback_URL}
+   
+   #R file path
+   rsource.newsUpload='{Folder_location}/Rsource/newsupload.R', encoding = 'UTF-8'
+   rsource.allAnalysis='{Folder_location}/Rsource/All_Analysis.R', encoding = 'UTF-8'
+   ```
+
+4. Install the library related to the R source
+
+5. Run the Rserve (at the installation location)
+
+   ```bash
+   $ Rserve --RS-encoding utf8
+   ```
+
+6. [Add server from Tomcat v9.0 in Eclipse] - [Start the server]
+
+
+
+## Screenshots
+
+- ### Main
+
+<img src="./photo/mainpage.PNG">
 
 
 
 
 
-## End
+- ### Stock Information
+
+<img src ="./photo/stockinfo.png">
+
+
+
+
+
+- ### Stock Purchase/Sales
+
+<img src='./photo/stockinfo2.png'>
